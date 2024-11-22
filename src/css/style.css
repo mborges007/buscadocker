@@ -1,0 +1,746 @@
+/* Estilo do Modal */
+.modal {
+    display: none; /* Inicialmente o modal está oculto */
+    position: fixed;
+    z-index: 1; /* Fica por cima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 100%; /* Ocupa toda a altura da tela */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Tamanho do modal */
+    max-width: 400px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalMessage {
+    font-size: 18px;
+    color: #333;
+}
+
+
+.lupas-fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/search.svg');
+    background-repeat: repeat;
+    background-size: 50px 50px; /* Controla o tamanho da lupa */
+    opacity: 0.1; /* Torna as lupas bem suaves */
+    pointer-events: none; /* Impede que a marca d'água interfira nas interações */
+    z-index: -1; /* Garante que o fundo fique atrás de outros conteúdos */
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Remove rolagem horizontal */
+    position: relative;
+}
+
+body {
+    background-color: #f0f0f0;
+    height: 100%;
+    overflow: auto;
+}
+
+.hoverando{
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.hoverando:hover{
+    transform: scale(1.01); /* Aumenta levemente a div (5%) */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adiciona um efeito de sombra */
+}
+
+
+.saltando{
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    background-color: #526e70;
+    border: none;
+    border-radius: 20px;
+    
+}
+.saltando:hover{
+    transform: scale(1.01); /* Aumenta levemente a div (5%) */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adiciona um efeito de sombra */
+    background-color: #526e70;
+}
+
+
+#avaliacao i.filled {
+    color: gold;
+}
+
+#avaliacao i {
+    font-size: 16px; /* Tamanho padrão */
+    color: #ccc; /* Cor padrão */
+    transition: transform 0.2s, color 0.2s; /* Animação para suavizar */
+    cursor: pointer;
+}
+
+
+
+#avaliacao i:hover, #avaliacao i.hovered {
+    transform: scale(1.3); /* Aumentar o tamanho */
+    color: #ffcc00; /* Cor ao passar o mouse */
+}
+
+#avaliacao i.filled {
+    color: #ffcc00; /* Cor das estrelas selecionadas */
+}
+
+
+/* Estilo para estrelas acesas */
+.fa-star, .fa-star-half-alt {
+    color: #ffcc00; /* Cor amarela para estrelas acesas */
+}
+
+/* Estilo para estrelas não acesas */
+.far.fa-star {
+    color: #070707; /* Cor cinza para o preenchimento das estrelas apagadas */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* cor de fundo das setas */
+    border-radius: 50%; /* faz as setas ficarem arredondadas */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%; /* centraliza as setas verticalmente */
+    transform: translateY(-50%); /* Ajusta a posição exata */
+}
+
+.testao {
+    max-width: 100%;     /* A imagem nunca ultrapassará a largura do carrossel */
+    max-height: 360px;   /* Define uma altura máxima para as imagens */
+    object-fit: cover;   /* Garante que a imagem se ajuste corretamente ao espaço sem distorcer */
+    align-items: center;
+}
+
+
+.sidebar, .content, .dropdown-item, .profile-container {
+    cursor: default; /* Define o cursor padrão */
+}
+
+
+
+.scrollable-menu {
+    max-height: 200px; /* Defina a altura máxima desejada */
+    overflow-y: auto; /* Habilita a barra de rolagem vertical */
+}
+
+.verdinho{
+    background-color: #84B0B5; /* Cor da sidebar */
+    color: #F5F5E6; /* Cor do texto */
+}
+.hoverando:hover{
+    background-color: #526e70
+}
+
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Espaço entre os cartões */
+    margin-left: 200px; /* Ajuste conforme a largura da sidebar */
+    width: calc(100% - 200px); /* Ajuste conforme a largura da sidebar */
+    }
+
+/* Sidebar esquerda */
+.sidebar {
+    background-color: #84B0B5;
+    padding: 20px;
+    border-radius: 0px 20px 20px 0px;
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1000;
+    transform: scale(1.01); /* Aumenta levemente a div (5%) */
+    
+}
+
+
+
+/* Dropdown */
+.dropdown-toggle.no-border {
+    border: none;
+    background-color: #84B0B5; /* Cor da sidebar */
+    color: #F5F5E6; /* Cor do texto */
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+
+.dropdown-toggle:hover {
+    transform: scale(1.01); /* Aumenta levemente a div (5%) */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adiciona um efeito de sombra */
+}
+.dropdown-menu {
+    max-height: 200px; /* Altura máxima para o dropdown */
+    overflow-y: auto; /* Habilita a rolagem vertical */
+}
+
+/* Personalização da barra de rolagem para navegadores WebKit */
+.dropdown-menu::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #84B0B5; /* Cor do fundo da barra de rolagem */
+    border-radius: 20px; /* Bordas arredondadas da trilha da barra de rolagem */
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: #F5F5E6; /* Cor da barra de rolagem */
+    border-radius: 20px; /* Bordas arredondadas do indicador da barra de rolagem */
+    border: 2px solid #84B0B5; /* Espaço ao redor do indicador */
+}
+
+/* Estilo para navegadores Firefox */
+.dropdown-menu {
+    scrollbar-width: thin; /* Largura da barra de rolagem */
+    scrollbar-color: #F5F5E6 #84B0B5; /* Cor do indicador e da trilha */
+}
+
+.dropdown-item {
+    color: #F5F5E6; /* Cor do texto dos itens do menu */
+}
+
+.dropdown-item:hover {
+    background-color: #78a1a5; /* Cor de fundo ao passar o mouse sobre o item do menu */
+}
+
+.dropdown-menu.show {
+    display: block; /* Garante que o menu dropdown fique visível */
+}
+
+.sidebar .btn-primary, .sidebar .btn-secondary {
+    width: 80%; /* Ajuste a largura conforme necessário */
+    margin: 0 auto; /* Centraliza os botões */
+    border-radius: 20px; /* Arredonda os cantos dos botões */
+}
+/* Sidebar esquerda */
+.sidebar .btn-primary {
+    background-color: #66888b; /* Cor do botão de Login */
+    border-color: #84B0B5;
+    color: white;
+}
+
+.sidebar .btn-secondary {
+    background-color: #BF4341; /* Cor do botão de Cadastro */
+    border-color: #BF4341;
+    color: white;
+}
+
+.sidebar .btn-primary:hover {
+    background-color: #78a1a5;
+    border-color: #78a1a5;
+}
+
+.sidebar .btn-secondary:hover {
+    background-color: #78a1a5;
+    border-color: #78a1a5;
+}
+
+
+
+/* Alinhamento dos botões na parte inferior */
+.sidebar .mt-auto {
+    margin-top: auto; /* Empurra os botões para a parte inferior */
+}
+/* Conteúdo principal */
+.main-content {
+    margin-left: 250px; /* Ajusta para a largura da sidebar */
+    padding: 20px;
+    height: 100vh; /* Garante altura da tela */
+    overflow-y: auto; /* Permite rolagem vertical */
+    display: flex;
+    flex-direction: column;
+}
+
+#ordenar {
+    background-color: #F5F5E6;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+    
+
+/* Card de formulário */
+.form-card {
+    background-color: #84B0B5;
+    border-radius: 20px;
+    padding: 15px;
+    width: 80%;
+    max-width: 450px;
+}
+
+/* Título do formulário */
+.form-card .card-title {
+    color: #F5F5E6;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Inputs, textarea e select */
+.form-control,
+.form-select {
+    background-color: #F5F5E6;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 12px;
+    margin-bottom: 12px; /* Espaçamento entre os inputs */
+}
+
+
+/* Estilo do botão Início */
+.no-border {
+    border: none;
+    background-color: #84B0B5; /* Cor da sidebar */
+    color: #F5F5E6; /* Cor do texto */
+    width: 100%; /* Faz com que o botão ocupe toda a largura da sidebar */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 10px; /* Ajusta o padding */
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    text-transform: uppercase; /* Deixa o texto em maiúsculas */
+    font-weight: bold; /* Deixa o texto em negrito */
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+
+
+
+
+.no-border:hover {
+    background-color: #6e8e8e; /* Cor ao passar o mouse */
+    transform: scale(1.01); /* Aumenta levemente a div (5%) */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adiciona um efeito de sombra */
+}
+
+.btn-light {
+    background-color: transparent; /* Remove a cor padrão do Bootstrap */
+    border: none; /* Remove a borda padrão do Bootstrap */
+    
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem; /* Espaço abaixo do botão */
+}
+
+.tamanho {
+    font-size: 25px;
+}
+
+                    /* index */
+
+/* Estilo para a seção passo a passo */
+.steps-container {
+    background-color: #84B0B5; /* Cor de fundo */
+    padding: 15px;
+    border-radius: 20px;
+    margin: 20px auto; /* Centraliza horizontalmente */
+    max-width: 1200px; /* Define uma largura máxima */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Espaçamento entre os passos */
+}
+
+.step {
+    flex: 1;
+    margin: 0 10px;
+    padding: 10px;
+    color: white;
+    max-width: 250px; /* Define uma largura máxima para cada passo */
+    text-align: center;
+}
+
+.step h4 {
+    font-weight: bold;
+}
+
+.step p {
+    font-size: 16px;
+}
+
+/* Estilo da imagem do passo */
+.step-image {
+    width: 150px; /* Tamanho da imagem */
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+/* Certifique-se de que a barra lateral não sobreponha o conteúdo */
+.content {
+    margin-left: 250px; /* Ajuste conforme a largura da sidebar */
+    padding: 20px; /* Adiciona padding para evitar que conteúdo toque a borda */
+    width: calc(100% - 250px); /* Ajuste conforme a largura da sidebar */
+    overflow-y: auto; /* Permite rolagem vertical */
+}
+
+
+/* Estilo das imagens */
+#cards img {
+    max-width: 100px; /* Ajuste o tamanho das imagens conforme necessário */
+    height: auto;
+    border-radius: 20px; /* Para combinar com o estilo arredondado */
+}
+
+/* Estilo para os cards dos passos */
+#cards .col-md-3 {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 20px;
+}
+
+
+/* Estilo do Filtro de Busca */
+
+.form-control.aumentar,
+.form-select.aumentar {
+    width: 120%;
+    max-width: 300px;
+    border: 2px solid #84B0B5; 
+    border-radius: 20px;                
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+/* Estilo para os resultados da busca */
+.results-container {
+    width: 90%;
+    margin: 20px auto; 
+    background-color: #F5F5E6; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    padding: 10px;
+}
+
+.result-item {
+    display: block;
+    padding: 10px; 
+    text-decoration: none; 
+    color: #333; 
+    border-bottom: 1px solid #ccc; 
+}
+
+.result-item:hover {
+    background-color: #d9f7e9; /* Fundo ao passar o mouse */
+}
+
+.result-item:last-child {
+    border-bottom: none; /* Remove a linha da última item */
+}
+
+
+
+/* Botão Enviar */
+.btn-block {
+    background-color: #BF4341;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 10px;
+    width: 150px;  /* Diminuir a largura do botão */
+}
+
+/* Centralizar o botão */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.btn-block:hover {
+    background-color: #BF4341;
+    border-color: #BF4341;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Garante a altura da tela */
+    overflow: hidden;
+}
+/* Estilos para a página de lista_profiss*/
+
+/* Contêiner principal da seção de perfil */
+.w-100 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row; /* Alinha os elementos em linha */
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #84B0B5;
+    border-radius: 20px;
+    padding: 15px;
+    width: 90%;
+    max-width: 800px;
+    margin-top: 30px;
+    min-height: 200px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.profile-container:hover{
+    background-color: #78a1a5;
+    transform: scale(1.02); /* Aumenta levemente a div (5%) */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adiciona um efeito de sombra */
+}
+
+.profile-photo {
+    background-color: #D8D8D8;
+    border-radius: 50%; /* Deixa a imagem circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    flex-shrink: 0; /* Garante que a imagem não será redimensionada */
+}
+
+.profile-photo img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%; /* Mantém a imagem redonda */
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px; /* Isso ajuda a manter o alinhamento consistente */
+}
+
+
+
+.profile-info p {
+    margin: 0;
+    margin-bottom: 15px; /* Adiciona um espaçamento entre as informações */
+}
+
+.row.align-items-center-perfil {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile-info input,
+.profile-info textarea {
+    background-color: #F5F5E6;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.profile-description {
+    background-color: #F5F5E6;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 20px;
+    max-width: 100%;
+    min-height: 100px; /* Define uma altura mínima para a descrição */
+}
+
+.profile-carousel {
+    background-color: #D8D8D8;
+    border-radius: 20px;
+    height: 200px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.profile-carousel button {
+    background-color: #BF4341;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile-carousel button:hover {
+    background-color: #93372F;
+}
+
+
+
+.centrinho {
+    text-align: center;
+    margin: 20px 0;
+    color: #BF4341;
+
+}
+
+
+/* PEFIL PERFIL*/
+
+.row.align-items-center-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.perfil-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #84B0B5;
+    border-radius: 20px;
+    padding: 15px;
+    width: 60%;
+    max-width: 1000px; /* Define uma largura máxima para alinhar com a seção passo a passo */
+    margin-top: 30px; /* Espaço superior */
+}
+
+.perfil-photo {
+    background-color: #D8D8D8;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.perfil-photo img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 50%;
+}
+
+.perfil-info {
+    padding-left: 20px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.perfil-info input,
+.perfil-info textarea {
+    background-color: #F5F5E6;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.perfil-description {
+    background-color: #F5F5E6;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .profile-info {
+        width: 100%;
+        padding-left: 0; /* Remove o padding à esquerda em telas pequenas */
+        text-align: center; /* Centraliza o texto */
+    }
+}
+
+
+/* Ajuste da responsividade */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Ocupa toda a largura da tela em dispositivos móveis */
+        height: auto; /* Ajusta a altura para o conteúdo */
+        position: relative; /* Remove a posição fixa */
+        overflow: hidden; /* Remove a rolagem da sidebar em telas pequenas */
+    }
+
+    .main-content {
+        margin-left: 0; /* Remove a margem à esquerda para dispositivos móveis */
+        width: 100%; /* Ajusta a largura do conteúdo principal */
+    }
+}
+
+
